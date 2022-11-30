@@ -15,7 +15,7 @@ JATE is a simple text editor application meets PWA critera and can function onli
 ## How to Use
 Visit the [deployed application](https://stark-beach-27936.herokuapp.com/) where you will be presented with a code/text editor. Any code or text you add will save automatically whenever you click off of the window. On refresh or revisit, the text is persistent and saved in IndexedDB.
 
-![Image1](./assets/Jate.JPG)
+![Image1](./assets/manifest.JPG)
 
 
 ## Code Snippet
