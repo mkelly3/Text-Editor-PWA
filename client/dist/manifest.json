@@ -32,7 +32,7 @@
     }
   ],
   "name": "text-editor",
-  "short_name": "PWA",
+  "short_name": "JATE",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": "/",
