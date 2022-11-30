@@ -19,39 +19,44 @@ Visit the [deployed application](https://stark-beach-27936.herokuapp.com/) where
 
 
 ## Code Snippet
-The code snippet below shows how each card is generated. The one displayed is for the Engineer. Therefore, the data gathered from the command line is dynamically inputted into each respective area of the
-html card. 
+In the Webpack-config.js added injectmanifest and WebpackPWA Manifest to generate a manifest.json. 
 
-``` const getEngineer = (engineer) =>{
-        return ` 
-        <div class="card employee-card">
-        <div class="card-header">
-            <h2 class="card-title">${engineer.getName()}</h2>
-            <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>
-        </div>
-        <div class="card-body">
-            <ul class="list-group">
-                <li class="list-group-item">ID: ${engineer.getId()}</li>
-                <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGitHub()}" target="_blank" rel="noopener noreferrer">${engineer.getGitHub()}</a></li>
-            </ul>
-        </div>
-    </div>
-     `;
-    };
+``` 
+  new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: 'text-editor',
+        short_name: 'JATE',
+        description: 'Just Another Text Editor!',
+        start_url: '/',
+        publicPath: '/',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+        ],
+      }),
 ```
 
 ## Technologies Used
 - Node.Js
-- JavaScript
-- Git
-- GitHub
-- HTML
-- Boot Strap 
+- Express.js
+- PWA
+- Heroku 
+- WebPack 
+    - Service Workers
+    - Create Manifest
+- IndexedDB
 
 ## Installation
-- Inquirer
-- Jest
+- Webpack-dev-server
+- Workbox-webpack-plugin
 
 ## Contact Information 
 - [GitHub](https://github.com/mkelly3/)
