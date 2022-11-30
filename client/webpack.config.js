@@ -21,19 +21,19 @@ module.exports = () => {
       // Adding Webpack plugin to generate HTML and inject our bundles
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'PWA Text Editor'
+  
       }),
       // added InjectManifest 
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'src-sw.js',
+        swDest: 'service-worker.js',
       }),
       // added manifest.json 
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
         name: 'text-editor',
-        short_name: 'PWA',
+        short_name: 'JATE',
         description: 'Just Another Text Editor!',
         start_url: '/',
         publicPath: '/',
